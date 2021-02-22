@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoTekst</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div id="content" class="container mt-5 pb-3">
+        <div class="row">
+            <div class="col-6">
+                <h1 id="title" class="text-center mt-3 mb-0">GoTekst</h1>
+                <h2 id="subtitle" class="text-center">jednostavno pretvaranje govora u tekst</h2>
+
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <button id="microphone" class="mt-3">
+                            <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                                <path fill-rule="evenodd" d="M10 8V3a2 2 0 1 0-4 0v5a2 2 0 1 0 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+                            </svg> 
+                        </button>
+                    </div>
+                </div>
+
+                <div class="custom-control custom-switch custom-switch-xl mt-5">
+                    <input type="checkbox" class="custom-control-input" id="textEditSwitch">
+                    <label class="custom-control-label" for="textEditSwitch">Omogući uređivanje teksta</label>
+                </div>
+                <div class="custom-control custom-switch custom-switch-xl">
+                    <input type="checkbox" class="custom-control-input" id="numberSwitch">
+                    <label class="custom-control-label" for="numberSwitch">Zamjeni znamenke tekstom</label>
+                </div>
+                <div class="custom-control custom-switch custom-switch-xl">
+                    <input type="checkbox" class="custom-control-input" id="functionSwitch">
+                    <label class="custom-control-label" for="functionSwitch">Omogući korištenje naredbi</label>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="row mt-3">
+                    <h3>Za sve nejasnoće u vezi korištenja programa otvorite <a href="#" onclick="showInfo()">upute za korištenje</a> ili pritisnite F2</h3>
+                </div>
+                <div class="row d-flex justify-content-end mr-2">
+                    <button onclick="deleteMessage()" class="col2-buttons">Obriši sve</button>                   
+                    <button onclick="saveFile()" class="col2-buttons align-self-end">Preuzimanje .txt datoteke</button>
+                </div>
+                <div class="row mt-3">
+                    <div class="col d-flex justify-content-center">
+                        <textarea name="message" id="message" cols="100" rows="100" readonly></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <textarea name="info" id="info" cols="100" rows="100" readonly>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

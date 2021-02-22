@@ -1,0 +1,132 @@
+body{
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+}
+
+#content{
+    border: 2px solid #1a1a1a;
+    border-radius: 30px;
+    box-shadow: #1a1a1a 0px 0px 20px;
+}
+
+#title{
+    font-weight: 400;
+    font-size: 5rem;
+    color: #1a1a1a;
+}
+
+#subtitle{
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+#microphone{
+    border-radius: 500px;
+    padding: 50px;
+    border: 5px solid #1a1a1a;
+    background-color: #3689e6;
+    transition: all 200ms;
+}
+
+#microphone svg{
+    width: 150px;
+    height: 150px;
+    color: #fafafa;
+}
+
+#message{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    padding: 10px;
+    resize: none;
+    max-width: 2000px;
+    max-height: 450px;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    display: block;
+}
+
+#message:focus{
+    outline: none;
+    border-width: 2px;
+}
+
+#info{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    padding: 10px;
+    resize: none;
+    max-width: 2000px;
+    max-height: 450px;
+    background-color: #fafafa;
+    border: 2px solid #1a1a1a;
+    border-radius: 10px;
+    display: none;
+}
+
+#info:focus{
+    outline: none;
+}
+
+.custom-switch.custom-switch-xl{
+    padding-bottom: 1rem;
+    padding-left: 2.25rem;
+}
+
+.custom-switch.custom-switch-xl .custom-control-label{
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+}
+
+.custom-switch.custom-switch-xl .custom-control-label::before{
+    border-radius: 1rem;
+    height: 2rem;
+    width: 3.5rem;
+}
+
+.custom-switch.custom-switch-xl .custom-control-label::after{
+    border-radius: 2rem;
+    height: calc(2rem - 4px);
+    width: calc(2rem - 4px);
+}
+
+.custom-control-input:checked + .custom-control-label::after{
+    transform: translateX(1.5rem) !important;
+}
+
+.custom-control-input:checked + .custom-control-label::before{
+    color: #fafafa;
+    border-color: #3689e6;
+    background-color: #3689e6;
+}
+
+h3{
+    font-weight: 300;
+    font-size: 1rem;
+    color: #1a1a1a;
+    padding: 15px;
+}
+
+h3 a{
+    color: #3689e6;
+    font-weight: 400;
+}
+
+.col2-buttons{
+    color: #fafafa;
+    background-color: #3689e6;
+    border: 3px solid #1a1a1a;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: box-shadow 200ms;
+}
+
+.col2-buttons:focus{
+    box-shadow: #3689e6 0px 0px 10px;
+}
