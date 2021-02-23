@@ -36,7 +36,7 @@ recognition.onend = function(event){    //funkcija se pokreće kada se isključi
     // koristi se kako nebi broj '456' zapisalo kao 'četiripetšest'
 
     if(document.getElementById("functionSwitch").checked){
-        document.getElementById("message").value = document.getElementById("message").value.replaceAll("insert točka",".").replaceAll("insert zarez",",").replaceAll("insert točka zarez",";").replaceAll("insert navodnik",'"').replaceAll("insert lijeva zagrada","(").replaceAll("insert desna zagrada",")").replaceAll("insert povlaka","-").replaceAll("insert dvije točke",":").replaceAll("insert tri točke","...").replaceAll("insert novi red","\n");
+        document.getElementById("message").value = document.getElementById("message").value.replaceAll("insert točka zarez",";").replaceAll("insert točka",".").replaceAll("insert zarez",",").replaceAll("insert navodnik",'"').replaceAll("insert lijeva zagrada","(").replaceAll("insert desna zagrada",")").replaceAll("insert povlaka","-").replaceAll("insert dvije točke",":").replaceAll("insert tri točke","...").replaceAll("insert novi red","\n");
     };  //ovaj dio se pokreće ako je u tom trenutku switch gumb za korištenje naredbi uključen, radi na istom principu kao i gornji primjer, samo što koristi klasične stringove
     // mogućnosti tj. naredbe koje prepoznaje su INSERT + ime znaka poput točke, zareza, itd.
 
