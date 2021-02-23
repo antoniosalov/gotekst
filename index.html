@@ -1,36 +1,46 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="hr"> 
+<!-- jezik ove stranice je hrvatski te će se on uzimati kao default vrijednost pri odabriu jezika prepoznavanje riječi ako se ne zada drugačije -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoTekst</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- omogućuje korištenje svih znakova iz seta UTF-8 kao što su č,ć,š,ž,đ,... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- nepisano je pravilo da ova linija mora biti dio svakog head elementa moderne HTML5 stranice, zapravo definira da je osnovna vrijednost vidljivog prostora stranice povećana za 1.0 tj. da je u originalnoj veličini -->
+    <title>GoTekst</title> 
+    <!-- naslov koji će se ispisivati na kartici web strannice -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+    <!-- uključivanje datoteke potrebne za rad Bootstrap-a v4.6.0, CSS framework-a koji sadrži predefinirane class-e koji se mogu pridodavati elementima i tako ubrazi izradu dizajna stranice -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
-    <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet"> 
+    <!-- prošle dvije linije kopriane su sa stranice fonts.google.com i omoguću korištenje fonta Inter u debljini 300 i 400  -->
+    <link rel="stylesheet" href="app.css"> 
+    <!-- link na CSS datoteku -->
 </head>
 <body>
 
-    <div id="content" class="container mt-5 pb-3">
+    <div id="content" class="container mt-5 pb-3"> 
+        <!-- sav je sadržaj postavjen u okvir, u ovom slučaju korišten je Bootstrap-ov class 'container', 'mt-5' i 'pb-3' koje dodaju automatske razmake s određenih strana radi boljeg izgleda -->
         <div class="row">
             <div class="col-6">
                 <h1 id="title" class="text-center mt-3 mb-0">GoTekst</h1>
-                <h2 id="subtitle" class="text-center">jednostavno pretvaranje govora u tekst</h2>
+                <h2 id="subtitle" class="text-center">jednostavno pretvaranje govora u tekst</h2> 
+                <!-- naslov i podnaslov programa označeni posebnim id-evima kako bi se lakše uređivali putem CSS-a, također su korišteni i neki Bootsrapovi class-ovi za centriranje i izradu nevidljivih redova i stupaca za poravnanje -->
 
                 <div class="row">
                     <div class="col d-flex justify-content-center">
                         <button id="microphone" class="mt-3">
-                            <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                            <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16"> 
+                                <!-- označuje ikonu mikrofona koja je preuzeta s stranice icons.bootstrap.com kao dio Bootstrap-a -->
                                 <path fill-rule="evenodd" d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
                                 <path fill-rule="evenodd" d="M10 8V3a2 2 0 1 0-4 0v5a2 2 0 1 0 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
                             </svg> 
+                            <!-- kopirano iz Bootstrap-a, omogućuje precizno definiranje ikone mikrofona koja se može dodatno uređivati putem CSS-a -->
                         </button>
                     </div>
                 </div>
-
+                <!-- slijede 3 switch gumba koja su predefinirana u Bootstrap-u, svakome od njih je ili ovdje ili kroz Javascript pridodana funkcija ili if-petlja koju pokreću -->
                 <div class="custom-control custom-switch custom-switch-xl mt-5">
-                    <input type="checkbox" class="custom-control-input" id="textEditSwitch">
+                    <input type="checkbox" class="custom-control-input" id="textEditSwitch" onclick="textEdit()">
                     <label class="custom-control-label" for="textEditSwitch">Omogući uređivanje teksta</label>
                 </div>
                 <div class="custom-control custom-switch custom-switch-xl">
@@ -45,11 +55,13 @@
 
             <div class="col-6">
                 <div class="row mt-3">
-                    <h3>Za sve nejasnoće u vezi korištenja programa otvorite <a href="#" onclick="showInfo()">upute za korištenje</a> ili pritisnite F2</h3>
+                    <h3>Za sve nejasnoće u vezi korištenja programa otvorite <a href="#" onclick="showInfo()">upute za korištenje</a> ili pritisnite F2</h3> 
+                    <!-- tekst unutar kojega se nalazi link koji će pokrenuti funkciju showInfo() koja će otvoriti upute za korištenje, u Javascript-u je vidljivo kako se ista može otvoriti i korištenjem tipke F2 -->
                 </div>
                 <div class="row d-flex justify-content-end mr-2">
                     <button onclick="deleteMessage()" class="col2-buttons">Obriši sve</button>                   
-                    <button onclick="saveFile()" class="col2-buttons align-self-end">Preuzimanje .txt datoteke</button>
+                    <button onclick="saveFile()" class="col2-buttons align-self-end">Preuzimanje .txt datoteke</button> 
+                    <!-- dva gumba, jedan za brisanje teksta, drugi za preuzimanje .txt datoteke, svaki pokreće svoju funkciju u Javascript-u, također su korišteni Bootsrapovi class-ovi poput 'd-flex' i 'justify-content-end' koji omogućuju poravnanje tehnikama Flexbox-a -->
                 </div>
                 <div class="row mt-3">
                     <div class="col d-flex justify-content-center">
@@ -61,12 +73,17 @@
                         <textarea name="info" id="info" cols="100" rows="100" readonly>
                         </textarea>
                     </div>
-                </div>
+                </div> 
+                <!-- dva elementa textarea jedan u koji će se ispisivati rezultat programa, jedan koji služi za ispisivanje uputa za korištenje, korisnik ne vidi razliku budući da je kroz Javascript određeno da se na stranici istovremeno može prikazati samo jedan od njih -->
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+    <!-- Javascript datoteka koju omogućuje Bootstrap-ova verzija v4.6.0, služi za animaciju nekih njihovih elemenata, iako ništa takvo nije korišteno, nepisano je pravilo da se one pozovu na kraju body elementa za slučaj da budu korištene, ova omogućuje korištenje metoda i funkcija jezike jQuery koji je zapravo modificirani Javascript za razne animacije -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> 
+    <!-- slično kao prethodna, ova linija uključuje datoteku koja omogućuje korištenje JsDelvir-a kao modificiranog dijela Javascript-a -->
+    <script src="index.js"></script> 
+    <!-- ovdje je uključena naša .js datoteka u kojoj smo definirali potrebne funkcije -->
 </body>
 </html>

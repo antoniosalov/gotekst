@@ -1,7 +1,8 @@
 body{
     background-color: #fafafa;
     font-family: 'Inter', sans-serif;
-}
+} 
+/* korištenje fonta Inter preuzetog sa fonts.google.com */
 
 #content{
     border: 2px solid #1a1a1a;
@@ -9,17 +10,23 @@ body{
     box-shadow: #1a1a1a 0px 0px 20px;
 }
 
+/* okvir koji obuhvaća cijeli sadržaj, lagano je zakrivljen i ima sjenu i obrub */
+
 #title{
     font-weight: 400;
     font-size: 5rem;
     color: #1a1a1a;
 }
 
+/* definirana je debljina, veličina i boja naslova */
+
 #subtitle{
     font-weight: 300;
     font-size: 1.5rem;
     color: #1a1a1a;
 }
+
+/* isto i za podnaslov */
 
 #microphone{
     border-radius: 500px;
@@ -29,11 +36,15 @@ body{
     transition: all 200ms;
 }
 
+/* za gumb mikrofona određen je obrub, pozadina kao i zakrivljenost */
+
 #microphone svg{
     width: 150px;
     height: 150px;
     color: #fafafa;
 }
+
+/* za ikonu mikrofona u gumbu povećana je veličina i određena boja */
 
 #message{
     font-size: 1.5rem;
@@ -48,10 +59,15 @@ body{
     display: block;
 }
 
+/* tekst koji će se ispisivati rezultat imati će zadanu veličinu, debljinu, boju, razmak, obrub i zakrivljenost */
+/* također, se određuje maksimalna visina i širina elementa za ispis poruke kao i to da je u početku vidljiv što se kroz Javascript može mijenjati */
+
 #message:focus{
     outline: none;
     border-width: 2px;
 }
+
+/* pojačava obrub kada se klikne unutar prostora gdje se ispisuje poruka */
 
 #info{
     font-size: 1rem;
@@ -66,6 +82,8 @@ body{
     border-radius: 10px;
     display: none;
 }
+
+/* kao i za #message definirane su slične karakteristike, samo što u startu ovaj element nije vidljiv, a vidljiv će postati otvaranjem uputa za korištenje kroz funkciju u Javascript-u */
 
 #info:focus{
     outline: none;
@@ -103,6 +121,8 @@ body{
     background-color: #3689e6;
 }
 
+/* prošlih nekoliko linija služe kako bi precizno povećale switch gumbe koji suže za odabir određenih pojedinosti programa, budući da su ti gumbi preuzeti sa Bootstrap-a puno ih je teže modificirati te je zato potrebno malo više koda */
+
 h3{
     font-weight: 300;
     font-size: 1rem;
@@ -114,6 +134,8 @@ h3 a{
     color: #3689e6;
     font-weight: 400;
 }
+
+/* tekst koji obaviještva korisnika o postojanju uputa za korištenje kao i link označen elementom a kojim ih se može otvoriti */
 
 .col2-buttons{
     color: #fafafa;
@@ -130,3 +152,5 @@ h3 a{
 .col2-buttons:focus{
     box-shadow: #3689e6 0px 0px 10px;
 }
+
+/* uređuje dva gumba iznad okvira za ispis rezultata kao i slučaj lagane sijene kada su odabrani */
